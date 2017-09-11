@@ -6,7 +6,6 @@
 package login.servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -39,7 +38,7 @@ public class Validacion extends HttpServlet {
         String pass = request.getParameter("pass");
         
         Consultas con = new Consultas();
-        System.out.println(con.autenticacion(user, pass));
+        System.out.println(con.autenticacion(user, pass));        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -19,15 +19,19 @@ public class Consultas extends Conexion{
         
         Statement st = con.createStatement();
         ResultSet rs = null;
-        String Consulta = "SELECT * FROM usuarios";
+        try {
+            String consulta = "SELECT * FROM usuarios";
         
-        rs = st.executeQuery(Consulta);
-        
-        while (rs.next()) {
-            if (user.equals(rs.getString("usuario")) && pass.equals(rs.getString("contrasena"))) {
-                return true;                
-            }                        
+            rs = st.executeQuery(consulta);
+
+            while (rs.next()) {
+                if (user.equals(rs.getString("usuario")) && pass.equals(rs.getString("contrasena"))) {
+                    return true;                
+                }                        
+            }
+        } catch (Exception e) {
         }
+        
         return false;
     }
     
